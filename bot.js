@@ -968,7 +968,7 @@ bot.action('portfolio', (ctx) => {
                     { text: '🎥 Видеообзоры', url: 'https://vk.com/potolkoff03' }
                 ],
                 [
-                    { text: '💬 Отзывы клиентов', url: 'https://vk.com/potolkoff03' }
+                    { text: '💬 Отзывы клиентов', url: 'https://vk.com/topic-172808215_48667766' }
                 ],
                 [
                     { text: '◀️ Назад', callback_data: 'main_menu' }
