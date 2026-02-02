@@ -4,6 +4,9 @@ node_modules/
 # Environment variables
 .env
 
+# Git credentials (contains tokens)
+.git-credentials
+
 # Request data (contains personal info)
 requests.json
 
