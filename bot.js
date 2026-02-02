@@ -965,7 +965,7 @@ bot.action('portfolio', (ctx) => {
             inline_keyboard: [
                 [
                     { text: '📸 Фото работ', url: 'https://vk.com/potolkoff03' },
-                    { text: '🎥 Видеообзоры', url: 'https://vk.com/potolkoff03' }
+                    { text: '🎥 Видеообзоры', url: 'https://t.me/potolkoff2024' }
                 ],
                 [
                     { text: '💬 Отзывы клиентов', url: 'https://vk.com/topic-172808215_48667766' }
