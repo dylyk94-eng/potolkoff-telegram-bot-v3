@@ -1007,7 +1007,46 @@ ${companyInfo.contacts.instagram}
     ctx.editMessageText(contactMessage, contactsMenu);
 });
 
+// Обработчик телефона с кнопками "Написать в Telegram" и "Поделиться"
 bot.action('phone', (ctx) => {
+    ctx.answerCbQuery();
+    
+    const phoneNumber = '+7 (983) 420-88-05';
+    const sharePhone = phoneNumber.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
+    const shareText = encodeURIComponent('Здравствуйте, это Потолкоф!');
+    const shareUrl = 'https://t.me/share?url=' + sharePhone + '&text=' + shareText;
+    const telegramUrl = 'https://t.me/potolkoff2024';
+    
+    ctx.reply(
+`📞 НАШ ТЕЛЕФОН
+
+─────────────────────
+
+${phoneNumber}
+
+─────────────────────
+
+🕒 РАБОЧЕЕ ВРЕМЯ:
+Пн-Пт: 9:00 - 18:00
+Сб-Вс: выходной
+
+─────────────────────
+
+💡 Если мы не ответили - напишите нам в Telegram!
+    `, {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '💬 Написать в Telegram', url: telegramUrl },
+                    { text: '📤 Поделиться', url: shareUrl }
+                ],
+                [
+                    { text: '◀️ Назад', callback_data: 'main_menu' }
+                ]
+            ]
+        }
+    });
+});
     ctx.answerCbQuery();
     ctx.reply(`
 📞 НАШ ТЕЛЕФОН
