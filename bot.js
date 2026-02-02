@@ -684,7 +684,6 @@ bot.action('contacts', (ctx) => {
     const contactMessage = `
 📞 Наши контакты:
 
-Телефон: ${companyInfo.contacts.phone}
 Telegram: ${companyInfo.contacts.telegram}
 VK: ${companyInfo.contacts.vk}
 Instagram: ${companyInfo.contacts.instagram}
@@ -692,6 +691,11 @@ Instagram: ${companyInfo.contacts.instagram}
 Выберите удобный способ связи:
     `;
     ctx.editMessageText(contactMessage, contactsMenu);
+});
+
+bot.action('phone', (ctx) => {
+    ctx.answerCbQuery();
+    ctx.reply(`📞 Наш телефон:\n\n${companyInfo.contacts.phone}\n\nПозвоните нам в рабочее время!`);
 });
 
 bot.action('services', (ctx) => {
